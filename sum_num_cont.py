@@ -42,16 +42,21 @@ def main():
 
                 # user input is an integer
                 else:
-                    counter += 1
-                    sum_of_nums += user_num
+                    # user num is negative
+                    if user_num < 0:
+                        print("Invalid input! Please enter a whole number!")
 
-                    # user num is not the last number to be added
-                    if counter != amount_of_nums:
-                        sum_displayed += f"{user_num} + "
-                        continue
-
-                    # user num is the last number to be added
+                    # user num is whole
                     else:
+                        counter += 1
+                        sum_of_nums += user_num
+
+                        # user num is not the last number to be added
+                        if counter != amount_of_nums:
+                            sum_displayed += f"{user_num} + "
+                            continue
+
+                        # user num is the last number to be added
                         sum_displayed += f"{user_num} = {sum_of_nums}"
                         print(sum_displayed)
 
